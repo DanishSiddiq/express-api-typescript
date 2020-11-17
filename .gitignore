@@ -1,9 +1,15 @@
+# file: ~/.gitignore_global
+.DS_Store
+.idea
+.build
+
 # Logs
 logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+yarn.lock
 lerna-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)

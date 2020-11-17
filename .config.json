@@ -1,0 +1,11 @@
+{
+  "API_ENV": "local",
+  "NODE_PORT": 3130,
+  "MONGO_DSN": "mongodb://192.168.99.100:37017/dcs",
+  "MONGO_OPT": {
+    "poolSize": 5,
+    "native_parser": true,
+    "useNewUrlParser": true,
+    "useUnifiedTopology": true
+  }
+}
