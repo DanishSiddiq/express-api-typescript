@@ -14,7 +14,7 @@ export const createOne = async (request: Request, response: Response) => {
     try {
         // apply validation here
 
-        const student: IStudent = {
+        const student: IStudent = <IStudent>{
             firstName: request.body.firstName,
             lastName: request.body.lastName,
             email: request.body.email,
@@ -71,6 +71,7 @@ export const findOne = async (request: Request, response: Response) => {
  */
 export const deleteOne = async (request: Request, response: Response) => {
     try {
+        // apply validation
         const requestParams = { ...request.body, ...request.query, ...request.params };
         const result = await svcStudent.deleteOne(requestParams);
         const isSuccess = (result.n === 1 && result.ok === 1);

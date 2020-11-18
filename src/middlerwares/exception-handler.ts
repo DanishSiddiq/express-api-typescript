@@ -1,7 +1,8 @@
 import { ApiProblem as ExpressApiProblem } from 'express-api-problem';
 import { Request, Response, NextFunction } from "express";
 import * as HttpStatusCode from 'http-status-codes';
-const { logErrDetails } = require('../helper/logger');
+import { logErrDetails } from '../helper/logger';
+import { common } from "../helper/common";
 
 /**
  * Intercepts the exceptions and logs them if required
@@ -38,7 +39,7 @@ export const ExceptionHandlerMiddleware = (err: any, req: Request, res: Response
   const formattedResponse = {
     ...additionalData,
     connectionId: res.getHeader('x-connection-id'),
-    detail: `Express boilerplate – ${err.stack} }`,
+    ...err
   };
 
   // log error
